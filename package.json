@@ -1,0 +1,21 @@
+{
+  "name": "mongosql-engine",        // must be unique on npm
+  "version": "1.0.0",
+  "description": "SQL-like query engine for MongoDB with JOIN, GROUP BY, HAVING, transactions.",
+  "main": "mongoSQL.js",            // entry point
+  "type": "module",               // (or "module" if using ES modules)
+  "keywords": ["mongodb", "sql", "orm", "query", "database"],
+  "author": "Prosper Samuel Edoki",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prospersamueledoki/mongoSQL.git"
+  },
+  "bugs": {
+    "url": "https://github.com/prospersamueledoki/mongoSQL/issues"
+  },
+  "homepage": "https://github.com/prospersamueledoki/mongoSQL#readme",
+  "dependencies": {
+    "mongodb": "^6.9.0"
+  }
+}
