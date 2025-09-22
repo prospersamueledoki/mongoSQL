@@ -1,5 +1,5 @@
 {
-  "name": "mongosql-engine",        // must be unique on npm
+  "name": "@prospersamueledoki/mongosql",        // must be unique on npm
   "version": "1.0.0",
   "description": "SQL-like query engine for MongoDB with JOIN, GROUP BY, HAVING, transactions.",
   "main": "mongoSQL.js",            // entry point
