@@ -1,9 +1,9 @@
 {
-  "name": "@prospersamueledoki/mongosql",        // must be unique on npm
+  "name": "@prospersamueledoki/mongosql",        
   "version": "1.0.0",
   "description": "SQL-like query engine for MongoDB with JOIN, GROUP BY, HAVING, transactions.",
-  "main": "mongoSQL.js",            // entry point
-  "type": "module",               // (or "module" if using ES modules)
+  "main": "mongoSQL.js",        
+  "type": "module",              
   "keywords": ["mongodb", "sql", "orm", "query", "database"],
   "author": "Prosper Samuel Edoki",
   "license": "MIT",
