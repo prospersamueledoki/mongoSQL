@@ -42,7 +42,7 @@ git clone https://github.com/prospersamueledoki/mongoSQL.git
 cd mongoSQL
 npm install
 ```
-##Useage
+### Useage
 
 ```Js
 const { MongoClient } = require("mongodb");
@@ -97,11 +97,11 @@ async function main() {
 main();
 ```
 
-##🛠️ Contributing
+### 🛠️ Contributing
 
 Pull requests are welcome! For major changes, please open an issue first to discuss what you’d like to change.
 
-##📜 License
+### 📜 License
 
 MIT License.
 Developed by Splendid Edge Technologies.
