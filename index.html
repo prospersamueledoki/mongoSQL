@@ -1,109 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MongoSQL - Splendid Edge Technologies</title>
-    <meta name="description" content="MongoSQL: Make MongoDB behave like SQL. Developed by Splendid Edge Technologies.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* ===== Reset & Fonts ===== */
-        * { margin:0; padding:0; box-sizing:border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: #121212; color: #f0f0f0; line-height: 1.6; }
-
-        /* ===== Container ===== */
-        .container { max-width: 1000px; margin: auto; padding: 2rem; }
-
-        /* ===== Header ===== */
-        header { text-align:center; margin-bottom:3rem; }
-        header h1 { font-size:2.5rem; margin-bottom:0.5rem; }
-        header p { color:#ccc; font-size:1.1rem; }
-
-        /* ===== Features ===== */
-        .features { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:1.5rem; margin-bottom:3rem; }
-        .feature { background:#1e1e1e; padding:1.5rem; border-radius:10px; transition: transform 0.2s; }
-        .feature:hover { transform: translateY(-5px); }
-        .feature h3 { margin-bottom:0.5rem; color:#00bcd4; }
-        .feature p { color:#ccc; }
-
-        /* ===== Code Example ===== */
-        .code-section { background:#1e1e1e; padding:1.5rem; border-radius:10px; margin-bottom:3rem; overflow-x:auto; }
-        pre { background: #1b1b1b; padding:1rem; border-radius:8px; color:#00ff99; font-family: 'Courier New', monospace; }
-        code { font-size: 0.95rem; }
-
-        /* ===== Footer ===== */
-        footer { text-align:center; padding:2rem 0; color:#888; font-size:0.9rem; }
-        a { color:#00bcd4; text-decoration:none; }
-        a:hover { text-decoration:underline; }
-
-        /* ===== Buttons ===== */
-        .btn { display:inline-block; background:#00bcd4; color:#121212; padding:0.5rem 1rem; border-radius:5px; margin-top:1rem; text-decoration:none; font-weight:600; }
-        .btn:hover { background:#00a1b1; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MongoSQL - Splendid Edge Technologies</title>
+<meta name="description" content="MongoSQL: SQL subset parser for MongoDB. SELECT, INSERT, UPDATE, DELETE, JOINs, Transactions. Developed by Splendid Edge Technologies.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+  body{background:#121212;color:#f0f0f0;line-height:1.6;}
+  .container{max-width:1000px;margin:auto;padding:2rem;}
+  header{text-align:center;margin-bottom:3rem;}
+  header h1{font-size:2.5rem;margin-bottom:0.5rem;}
+  header p{color:#ccc;font-size:1.1rem;}
+  .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;margin-bottom:3rem;}
+  .feature{background:#1e1e1e;padding:1.5rem;border-radius:10px;transition:transform 0.2s;}
+  .feature:hover{transform:translateY(-5px);}
+  .feature h3{margin-bottom:0.5rem;color:#00bcd4;}
+  .feature p{color:#ccc;}
+  .code-section{background:#1e1e1e;padding:1.5rem;border-radius:10px;margin-bottom:3rem;overflow-x:auto;}
+  pre{background:#1b1b1b;padding:1rem;border-radius:8px;color:#00ff99;font-family:'Courier New',monospace;}
+  code{font-size:0.95rem;}
+  footer{text-align:center;padding:2rem 0;color:#888;font-size:0.9rem;}
+  a{color:#00bcd4;text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .btn{display:inline-block;background:#00bcd4;color:#121212;padding:0.5rem 1rem;border-radius:5px;margin-top:1rem;text-decoration:none;font-weight:600;}
+  .btn:hover{background:#00a1b1;}
+</style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- ===== Header ===== -->
-        <header>
-            <h1>MongoSQL</h1>
-            <p>Make MongoDB behave like SQL. Effortless queries, fully compatible with MongoDB.</p>
-            <a href="#example" class="btn">See Example</a>
-        </header>
+<div class="container">
+  <!-- Header -->
+  <header>
+    <h1>MongoSQL</h1>
+    <p>SQL subset parser for MongoDB – SELECT, INSERT, UPDATE, DELETE, JOINs, Transactions.</p>
+    <a href="#example" class="btn">See Usage Example</a>
+  </header>
 
-        <!-- ===== Features ===== -->
-        <section class="features">
-            <div class="feature">
-                <h3>SQL-Like Queries</h3>
-                <p>Write queries in a familiar SQL syntax while working with MongoDB collections.</p>
-            </div>
-            <div class="feature">
-                <h3>Full CRUD Support</h3>
-                <p>Create, Read, Update, Delete operations just like in SQL databases.</p>
-            </div>
-            <div class="feature">
-                <h3>Aggregation & Joins</h3>
-                <p>Perform aggregations, joins, and complex queries seamlessly.</p>
-            </div>
-            <div class="feature">
-                <h3>Node.js Friendly</h3>
-                <p>Integrate easily into any Node.js project with minimal setup.</p>
-            </div>
-            <div class="feature">
-                <h3>Lightweight & Fast</h3>
-                <p>Optimized for performance without bloating your app.</p>
-            </div>
-        </section>
-
-        <!-- ===== Code Example ===== -->
-        <section id="example">
-            <h2 style="text-align:center; margin-bottom:1rem;">Quick Usage Example</h2>
-            <div class="code-section">
-<pre><code>// Import MongoSQL
-const MongoSQL = require('mongosql');
-const db = new MongoSQL('mongodb://localhost:27017/mydb');
-
-// SELECT like SQL
-const users = await db.query('SELECT * FROM users WHERE age &gt; 25');
-
-// INSERT
-await db.query("INSERT INTO users (name, age) VALUES ('John Doe', 30)");
-
-// UPDATE
-await db.query("UPDATE users SET age = 31 WHERE name = 'John Doe'");
-
-// DELETE
-await db.query("DELETE FROM users WHERE age &lt; 18");
-</code></pre>
-            </div>
-        </section>
-
-        <!-- ===== Footer ===== -->
-        <footer>
-            <p>Developed by <a href="https://splendidedgetechnologies.vercel.app">Splendid Edge Technologies</a></p>
-            <p>&copy; 2025 MongoSQL. All rights reserved.</p>
-        </footer>
+  <!-- Features -->
+  <section class="features">
+    <div class="feature">
+      <h3>SQL Subset Parsing</h3>
+      <p>Parse practical SQL statements and translate them to MongoDB commands or aggregations.</p>
     </div>
+    <div class="feature">
+      <h3>CRUD Support</h3>
+      <p>SELECT (WHERE, JOIN, GROUP BY, HAVING, ORDER BY, LIMIT, OFFSET), INSERT, UPDATE, DELETE supported.</p>
+    </div>
+    <div class="feature">
+      <h3>Parameters & Transactions</h3>
+      <p>Use positional or named parameters and execute transactions (BEGIN/COMMIT/ROLLBACK with Mongo sessions).</p>
+    </div>
+    <div class="feature">
+      <h3>Schema Registry</h3>
+      <p>Register collections with table aliases and field mappings for simpler queries.</p>
+    </div>
+    <div class="feature">
+      <h3>Extensible Architecture</h3>
+      <p>Add custom functions, operators, or extend the query parser to suit your needs.</p>
+    </div>
+  </section>
+
+  <!-- Usage Example -->
+  <section id="example">
+    <h2 style="text-align:center;margin-bottom:1rem;">Practical Usage Example</h2>
+    <div class="code-section">
+<pre><code>// Connect MongoClient
+const { MongoClient } = require('mongodb');
+const MongoSQL = require('mongosql');
+
+const client = new MongoClient('mongodb://localhost:27017');
+await client.connect();
+const db = client.db('mydb');
+
+const ms = new MongoSQL({ db, client });
+
+// Register tables with collection mapping
+ms.registerTable('users', { collection: 'users' });
+ms.registerTable('orders', { collection: 'orders', indexes:[{keys:{userId:1}}] });
+
+// SELECT with JOIN, GROUP BY, HAVING
+const rows = await ms.query(
+  `SELECT u._id as userId, u.name, COUNT(o._id) AS orders
+     FROM users u
+     LEFT JOIN orders o ON o.userId = u._id
+    WHERE u.country = :country
+ GROUP BY u._id, u.name
+   HAVING COUNT(o._id) > ?
+ ORDER BY orders DESC
+    LIMIT 10 OFFSET 0`,
+  { country: 'NG' }, [3]
+);
+
+// INSERT, UPDATE, DELETE
+await ms.query("INSERT INTO users (name, country) VALUES (:name, :country)", { name:'Ada', country:'NG' });
+await ms.query("UPDATE users SET country='US' WHERE name LIKE 'A%'");
+await ms.query("DELETE FROM users WHERE country='US'");
+
+// Transactions
+await ms.query('BEGIN');
+try {
+  await ms.query("UPDATE users SET vip=true WHERE _id=:id", { id: someId });
+  await ms.query('COMMIT');
+} catch(e) {
+  await ms.query('ROLLBACK');
+  throw e;
+}
+</code></pre>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Developed by <a href="https://splendidedgetechnologies.vercel.app">Splendid Edge Technologies</a></p>
+    <p>&copy; 2025 MongoSQL. All rights reserved.</p>
+  </footer>
+</div>
 
 </body>
 </html>
